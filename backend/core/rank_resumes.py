@@ -16,16 +16,17 @@ load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 
-# EMBEDDING MODEL
 
-embedding_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
 
 
 # RECRUITER RANKING FUNCTION
 
 def rank_resumes(resume_paths, job_description):
+    # EMBEDDING MODEL
+
+    embedding_model = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
 
     # --------------------------------------------------
     # STEP 1: LOAD ALL UPLOADED RESUMES
