@@ -56,7 +56,7 @@ Give a short final recommendation explaining whether the candidate
 should apply for this role and what they should focus on improving.
 """
     #SEND REQ TO GROQ
-    response = client.chat.completions.create(model="llama-3.3-70b-versatile",messages=[{"role":"user","content":prompt}])
+    response = client.chat.completions.create(model="openai/gpt-oss-20b",messages=[{"role":"user","content":prompt}])
     #GET GROQ'S ANS
     answer = response.choices[0].message.content
     return answer
